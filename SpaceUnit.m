@@ -48,7 +48,7 @@
 
     range.location = noPlaceIndex + 1;
     noPlaceIndex = [AnyString2 rangeOfString:@"@"].location;
-    if (noPlaceIndex!=NSNotFound) {
+    if (noPlaceIndex!=NSNotFound && noPlaceIndex > range.location) {
         range.length = noPlaceIndex - range.location;
         result.groupNumber = [NSNumber numberWithFloat:[[AnyString2 substringWithRange:range] floatValue]];
     }
